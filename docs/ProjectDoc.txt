@@ -1,0 +1,2 @@
+1. add OAuth services for google
+2. notification for reminder

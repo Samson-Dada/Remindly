@@ -1,18 +1,17 @@
 import express from "express";
 // import userController from "./../controllers/userController.js";
 import {
-	signup,
+	register,
 	login,
 	forgotPassword,
 	resetPassword,
-	restrictTo,
 	protect,
 	updatePassword,
 } from "./../controllers/authController.js";
 
 const router = express.Router();
 
-router.post("/signup", signup);
+router.post("/register", register);
 router.post("/login", login);
 
 router.post("/forgotPassword", forgotPassword);
@@ -22,11 +21,6 @@ router.patch("/updateMyPassword", protect, updatePassword);
 
 // router.patch("/updateMe", protect, userController.updateMe);
 // router.delete("/deleteMe", protect, userController.deleteMe);
-
-// router
-// 	.route("/")
-// 	.get(userController.getAllUsers)
-// 	.post(userController.createUser);
 
 // router
 // 	.route("/:id")

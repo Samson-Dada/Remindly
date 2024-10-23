@@ -4,9 +4,13 @@ import validator from "validator";
 import bcrypt from "bcryptjs";
 
 const userSchema = new mongoose.Schema({
-	name: {
+	firstName: {
 		type: String,
-		required: [true, "Please tell us your name!"],
+		required: [true, "Please tell us your first name!"],
+	},
+	lastName: {
+		type: String,
+		required: [true, "Please tell us your last name!"],
 	},
 	email: {
 		type: String,
@@ -18,7 +22,7 @@ const userSchema = new mongoose.Schema({
 	photo: String,
 	role: {
 		type: String,
-		enum: ["user", "guide", "lead-guide", "admin"],
+		enum: ["user", "admin"],
 		default: "user",
 	},
 	password: {
